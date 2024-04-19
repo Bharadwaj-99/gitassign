@@ -1,4 +1,4 @@
-// components/RepositoryListPage.js
+
 import React, { useState } from 'react';
 
 function RepositoryListPage() {
@@ -6,15 +6,11 @@ function RepositoryListPage() {
     const [repositories, setRepositories] = useState([]);
 
     const handleSearch = async () => {
-        // Fetch repositories based on the username
-        // Update the repositories state
-        // ...
-
-        // Example: Fetch repositories from your backend API
+       
         try {
             const response = await fetch(`/api/users/${username}`);
             const data = await response.json();
-            setRepositories(data.repositories); // Assuming your API returns an array of repositories
+            setRepositories(data.repositories); 
         } catch (error) {
             console.error('Error fetching repositories:', error);
         }
@@ -30,15 +26,13 @@ function RepositoryListPage() {
             />
             <button onClick={handleSearch}>Search</button>
 
-            {/* Display user info */}
-            {/* Example: */}
-          `  {/* <div>
+         
+          {/* `  <div>
                 <img src={data.avatarUrl} alt={data.username} />
                 <p>{data.username}</p>
             </div>` */}
 
-            {/* Display repository list */}
-            {/* Example: */}
+           
             <ul>
                 {repositories.map((repo) => (
                     <li key={repo.id}>
